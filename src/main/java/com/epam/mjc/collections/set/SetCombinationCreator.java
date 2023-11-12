@@ -1,7 +1,6 @@
 package com.epam.mjc.collections.set;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class SetCombinationCreator {
     public Set<String> createSetCombination(Set<String> firstSet, Set<String> secondSet, Set<String> thirdSet) {
@@ -17,6 +16,10 @@ public class SetCombinationCreator {
         // Elements that belong only to the third Set
         result.addAll(thirdSet);
 
-        return result;
+        // Sort the result set to make the order consistent
+        List<String> resultList = new ArrayList<>(result);
+        Collections.sort(resultList);
+
+        return new HashSet<>(resultList);
     }
 }
