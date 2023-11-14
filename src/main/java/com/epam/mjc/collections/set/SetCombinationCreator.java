@@ -16,10 +16,10 @@ public class SetCombinationCreator {
         // Elements that belong only to the third Set
         result.addAll(thirdSet);
 
-        // Sort the result set to make the order consistent
+        // Sort the result set to make the order consistent based on names
         List<String> resultList = new ArrayList<>(result);
         Collections.sort(resultList);
 
-        return new HashSet<>(resultList);
+        return new LinkedHashSet<>(resultList);
     }
 }
